@@ -1,4 +1,4 @@
-package domain;
+package parking;
 
 import vehicle.Vehicle;
 
