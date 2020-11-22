@@ -34,15 +34,15 @@ public class OutputView {
         System.out.println("출차시간을 입력하세요!");
     }
 
-    public static void printParkingTime(int hour, int minute) {
+    public static void printParkingTime(final int hour, final int minute) {
         System.out.println("주차시간은 " + hour + "시간 " + minute + "분 입니다.");
     }
 
-    public static void printParkingRate(int price) {
+    public static void printParkingRate(final int price) {
         System.out.println("주차요금은 + " + price + "원 입니다.");
     }
 
-    public static void printAllPrice(int price) {
+    public static void printAllPrice(final int price) {
         System.out.println("총 수입은: " + price + "원 입니다.");
     }
 }
