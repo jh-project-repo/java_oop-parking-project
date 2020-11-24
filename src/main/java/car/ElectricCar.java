@@ -2,14 +2,25 @@ package car;
 
 public class ElectricCar extends Car {
 
-    private int electricOil;
+    private int battery;
 
-    public int getElectricOil() {
-        return electricOil;
+    public int getBattery() {
+        return battery;
     }
 
-    public void setElectricOil(int electricOil) {
-        this.electricOil = electricOil;
+    public void setBattery(int battery) {
+        this.battery = battery;
     }
 
+    public ElectricCar() {
+    }
+
+    public ElectricCar(int carNumber, String entranceTime, int battery) {
+        super(CarType.ELECTRIC_CAR, carNumber, entranceTime);
+        this.battery = battery;
+    }
+
+    public int getChargePrice() {
+        return 0;
+    }
 }

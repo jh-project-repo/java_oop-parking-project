@@ -2,6 +2,6 @@ package car;
 
 public enum CarType {
 
-    ELECTRICCAR, GENERALCAR,
+    ELECTRIC_CAR, GENERAL_CAR,
 
 }
