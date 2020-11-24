@@ -15,9 +15,9 @@ public class CarTest {
         Car car = new Car();
 
         // When
-        int price1 = car.getPrice(CarType.ELECTRICCAR,0, 31);
-        int price2 = car.getPrice(CarType.ELECTRICCAR,0, 39);
-        int price3 = car.getPrice(CarType.ELECTRICCAR,0, 40);
+        int price1 = car.getPrice(CarType.ELECTRIC_CAR,0, 31);
+        int price2 = car.getPrice(CarType.ELECTRIC_CAR,0, 39);
+        int price3 = car.getPrice(CarType.ELECTRIC_CAR,0, 40);
 
         // Then
         assertThat(price1).isEqualTo(3000);

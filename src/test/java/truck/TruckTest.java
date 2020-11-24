@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@SuppressWarnings("NonAsciiCharacters")
 public class TruckTest {
 
     @DisplayName("대형트럭 주차요금 테스트")
@@ -13,7 +14,6 @@ public class TruckTest {
 
         // Given
         TruckType largeTruck = TruckType.LARGE_TRUCK;
-        TruckType miniTruck = TruckType.MINI_TRUCK;
 
         // When
         int largePrice1 = TruckPrice.getPrice(largeTruck, 0, 60);

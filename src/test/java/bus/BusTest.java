@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 
 import static org.assertj.core.api.Assertions.*;
 
+@SuppressWarnings("NonAsciiCharacters")
 public class BusTest {
 
     @DisplayName("대형버스 주차요금 테스트")
@@ -12,15 +13,15 @@ public class BusTest {
     public void 대형버스_주차요금_테스트() {
 
         // Given
-        Bus largeBus = new LargeBus();
+        BusType largeBus = BusType.LARGE_BUS;
 
         // When
-        int price1 = largeBus.getPrice(0, 60);
-        int price2 = largeBus.getPrice(1, 1);
+        int largePrice1 = BusPrice.getPrice(largeBus, 0, 60);
+        int largePrice2 = BusPrice.getPrice(largeBus, 1, 1);
 
         // Then
-        assertThat(price1).isEqualTo(5000);
-        assertThat(price2).isEqualTo(8000);
+        assertThat(largePrice1).isEqualTo(5000);
+        assertThat(largePrice2).isEqualTo(8000);
     }
 
     @DisplayName("중형버스 주차요금 테스트")
@@ -28,15 +29,15 @@ public class BusTest {
     public void 중형버스_주차요금_테스트() {
 
         // Given
-        Bus mediumBus = new MediumBus();
+        BusType mediumBus = BusType.MEDIUM_BUS;
 
         // When
-        int price1 = mediumBus.getPrice(0, 60);
-        int price2 = mediumBus.getPrice(1, 1);
+        int mediumPrice1 = BusPrice.getPrice(mediumBus, 0, 60);
+        int mediumPrice2 = BusPrice.getPrice(mediumBus, 1, 1);
 
         // Then
-        assertThat(price1).isEqualTo(3000);
-        assertThat(price2).isEqualTo(5000);
+        assertThat(mediumPrice1).isEqualTo(3000);
+        assertThat(mediumPrice2).isEqualTo(5000);
     }
 
     @DisplayName("소형버스 주차요금 테스트")
@@ -44,16 +45,14 @@ public class BusTest {
     public void 미니버스_주차요금_테스트() {
 
         // Given
-        Bus miniBus = new MiniBus();
+        BusType miniBus = BusType.MINI_BUS;
 
         // When
-        int price1 = miniBus.getPrice(0, 60);
-        int price2 = miniBus.getPrice(1, 1);
+        int miniPrice1 = BusPrice.getPrice(miniBus, 0, 60);
+        int miniPrice2 = BusPrice.getPrice(miniBus, 1, 1);
 
         // Then
-        assertThat(price1).isEqualTo(2000);
-        assertThat(price2).isEqualTo(3000);
-
+        assertThat(miniPrice1).isEqualTo(2000);
+        assertThat(miniPrice2).isEqualTo(3000);
     }
-
 }
