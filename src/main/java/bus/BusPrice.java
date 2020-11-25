@@ -6,26 +6,25 @@ package bus;
 public class BusPrice {
 
     public static int getPrice(BusType busType, final int hour, final int minute) {
-        int price = 0;
         int defaultPrice = busType.getDefaultPrice();
         int halfHourlyPrice = busType.getHalfHourlyPrice();
 
         // 딱히 switch로 안나누고 바로 getPrice 함수 호출해도 될듯..? 왜냐면 인자로 BusType를 받으니까?
-        switch (busType) {
-            case LARGE_BUS:
-                price = getPrice(hour, minute, defaultPrice, halfHourlyPrice);
-                break;
-            case MEDIUM_BUS:
-                price = getPrice(hour, minute, defaultPrice, halfHourlyPrice);
-                break;
-            case MINI_BUS:
-                price = getPrice(hour, minute, defaultPrice, halfHourlyPrice);
-                break;
-            default:
-                throw new IllegalStateException(busType + "에 해당하는 버스 종류가 없습니다.");
-        }
+//        switch (busType) {
+//            case LARGE_BUS:
+//                price = getPrice(hour, minute, defaultPrice, halfHourlyPrice);
+//                break;
+//            case MEDIUM_BUS:
+//                price = getPrice(hour, minute, defaultPrice, halfHourlyPrice);
+//                break;
+//            case MINI_BUS:
+//                price = getPrice(hour, minute, defaultPrice, halfHourlyPrice);
+//                break;
+//            default:
+//                throw new IllegalStateException(busType + "에 해당하는 버스 종류가 없습니다.");
+//        }
 
-        return price;
+        return getPrice(hour, minute, defaultPrice, halfHourlyPrice);
     }
 
     private static int getPrice(final int hour, final int minute, final int defaultPrice, final int halfHourlyPrice) {
