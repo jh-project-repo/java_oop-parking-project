@@ -8,6 +8,7 @@ public class InputView {
     public static int inputMenu() {
         OutputView.initView(); // 얘는 이쪽에 있는게 좋을까.. main 함수에 바로 넣는게 좋을까..?
         int menu = SCANNER.nextInt();
+        SCANNER.nextLine(); // 개행처리를 위해 사용
         validInputMenu(menu);
         return menu;
     }
@@ -25,6 +26,7 @@ public class InputView {
         return carAndCapacity;
     }
 
+    // 예외 처리는 프로그램 종료 처리하는게 좋은지... 아니면 다시 입력받도록 하는게 좋은지... 개발자 마음..? 요구사항 마음..?
     private static void validInputCarAndCapacity(final String carAndCapacity) {
         if (carAndCapacity.split(" ").length != 2) {
             throw new IllegalStateException("차랑 종류 및 용량 입력이 잘못 되었습니다.");
@@ -43,24 +45,23 @@ public class InputView {
 
     public static int inputCarNumber() {
         OutputView.printCarNumber();
-        return SCANNER.nextInt();
+        return Integer.parseInt(SCANNER.nextLine()); // 개행처리를 위해 nextLine() 메서드 사용
     }
 
-    public static int inputEntranceTime() {
+    public static String inputEntranceTime() {
         OutputView.printEntranceTime();
-        return SCANNER.nextInt();
+        return SCANNER.nextLine();
     }
 
     public static int inputExitCarNumber() {
         OutputView.printExitCarNumber();
-        return SCANNER.nextInt();
+        return Integer.parseInt(SCANNER.nextLine());
     }
 
-    public static int inputExitTime() {
+    public static String inputExitTime() {
         OutputView.printExitTime();
-        return SCANNER.nextInt();
+        return SCANNER.nextLine();
     }
-
 
 }
 
