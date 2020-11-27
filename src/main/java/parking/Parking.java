@@ -28,7 +28,7 @@ public class Parking {
 
     public Parking(int vehicleCount) {
         this.vehicleCount = vehicleCount;
-        vehicles = new ArrayList<>();
+        vehicles = new ArrayList<>(vehicleCount);
     }
 
 

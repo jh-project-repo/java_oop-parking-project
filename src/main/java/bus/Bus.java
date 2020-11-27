@@ -1,13 +1,11 @@
 package bus;
 
-import vehicle.Vehicle;
+import util.DateUtils;
+import vehicle.Vehicles;
 
-public class Bus implements Vehicle {
+public class Bus extends Vehicles {
 
     private BusType busType;
-    private int busNumber;
-    private int entranceTime;
-    private int exitTime;
 
     public BusType getBusType() {
         return busType;
@@ -17,62 +15,54 @@ public class Bus implements Vehicle {
         this.busType = busType;
     }
 
-    public int getBusNumber() {
-        return busNumber;
+    @Override
+    public int getVehicleNumber() {
+        return vehicleNumber;
     }
 
-    public void setBusNumber(int busNumber) {
-        this.busNumber = busNumber;
+    @Override
+    public void setVehicleNumber(int vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
     }
 
-    public int getEntranceTime() {
+    @Override
+    public String getEntranceTime() {
         return entranceTime;
     }
 
-    public void setEntranceTime(int entranceTime) {
+    @Override
+    public void setEntranceTime(String entranceTime) {
         this.entranceTime = entranceTime;
     }
 
-    public int getExitTime() {
-        return exitTime;
-    }
+    public Bus() {}
 
-    public void setExitTime(int exitTime) {
-        this.exitTime = exitTime;
-    }
-
-    public Bus() {
-    }
-
-    public Bus(BusType busType, int busNumber) {
+    public Bus(BusType busType, int vehicleNumber, String entranceTime) {
         this.busType = busType;
-        this.busNumber = busNumber;
+        this.vehicleNumber = vehicleNumber;
+        this.entranceTime = entranceTime;
     }
 
-    public int getPrice(int hour, int minute) {
-        return getPrice(busType, hour, minute);
+    public static Bus getBus(final int vehicleCapacity, final int vehicleNumber, final String entranceTime) {
+        return new Bus(getBusType(vehicleCapacity), vehicleNumber, entranceTime);
     }
 
-    private int getPrice(BusType busType, int hour, int minute) {
-        int price = 0;
-
-        switch (busType) {
-            case LARGEBUS:
-                Bus largeBus = new LargeBus();
-                price = largeBus.getPrice(hour, minute);
-                break;
-            case MEDIUMBUS:
-                Bus mediumBus = new MediumBus();
-                price = mediumBus.getPrice(hour, minute);
-                break;
-            case MINIBUS:
-                Bus miniBus = new MiniBus();
-                price = miniBus.getPrice(hour, minute);
-                break;
+    private static BusType getBusType(final int vehicleCapacity) {
+        if (vehicleCapacity >= 40) {
+            return BusType.LARGE_BUS;
+        } else if (vehicleCapacity >= 20) {
+            return BusType.MEDIUM_BUS;
         }
-
-        return price;
+        return BusType.MINI_BUS;
     }
 
+    @Override
+    public int getPrice(final int hour, final int minute) {
+        return BusPrice.getPrice(busType, hour, minute);
+    }
 
+    @Override
+    public String toString() {
+        return "버스 " + vehicleNumber + " " + DateUtils.getDateFormat(entranceTime);
+    }
 }

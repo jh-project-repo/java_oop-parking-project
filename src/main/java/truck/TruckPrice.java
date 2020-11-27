@@ -10,23 +10,8 @@ package truck;
 public class TruckPrice {
 
     public static int getPrice(TruckType truckType, final int hour, final int minute) {
-        int price = 0;
         int hourlyPrice = truckType.getHourlyPrice();
-
-        switch (truckType) {
-            case LARGE_TRUCK:
-                price = getPrice(hour, minute, hourlyPrice);
-                break;
-            case MEDIUM_TRUCK:
-                price = getPrice(hour, minute, hourlyPrice);
-                break;
-            case MINI_TRUCK:
-                price = getPrice(hour, minute, hourlyPrice);
-                break;
-            default:
-                throw new IllegalStateException(truckType + "에 해당하는 트럭 종류가 없습니다.");
-        }
-        return price;
+        return getPrice(hour, minute, hourlyPrice);
     }
 
     private static int getPrice(final int hour, final int minute, final int hourlyPrice) {

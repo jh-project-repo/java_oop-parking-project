@@ -1,12 +1,11 @@
 package truck;
 
-import util.StringDate;
+import util.DateUtils;
 import vehicle.Vehicles;
 
 public class Truck extends Vehicles {
 
     private TruckType truckType;
-
 
     public TruckType getTruckType() {
         return truckType;
@@ -16,18 +15,22 @@ public class Truck extends Vehicles {
         this.truckType = truckType;
     }
 
+    @Override
     public int getVehicleNumber() {
         return vehicleNumber;
     }
 
+    @Override
     public void setVehicleNumber(int vehicleNumber) {
         this.vehicleNumber = vehicleNumber;
     }
 
+    @Override
     public String getEntranceTime() {
         return entranceTime;
     }
 
+    @Override
     public void setEntranceTime(String entranceTime) {
         this.entranceTime = entranceTime;
     }
@@ -54,12 +57,13 @@ public class Truck extends Vehicles {
         return TruckType.MINI_TRUCK;
     }
 
+    @Override
     public int getPrice(final int hour, final int minute) {
         return TruckPrice.getPrice(truckType, hour, minute);
     }
 
     @Override
     public String toString() {
-        return "트럭 " + vehicleNumber + " " + StringDate.strToDateFormat(entranceTime);
+        return "트럭 " + vehicleNumber + " " + DateUtils.getDateFormat(entranceTime);
     }
 }
