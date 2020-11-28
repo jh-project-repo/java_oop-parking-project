@@ -15,10 +15,6 @@ public class Parking {
         return vehicleCount;
     }
 
-    public void setVehicleCount(int vehicleCount) {
-        this.vehicleCount = vehicleCount;
-    }
-
     public List<Vehicles> getVehicles() {
         return vehicles;
     }
@@ -28,7 +24,7 @@ public class Parking {
 
     public Parking(int vehicleCount) {
         this.vehicleCount = vehicleCount;
-        vehicles = new ArrayList<>(vehicleCount);
+        vehicles = new ArrayList<Vehicles>(vehicleCount);
     }
 
 

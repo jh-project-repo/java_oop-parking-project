@@ -1,6 +1,6 @@
 package car;
 
-import util.StringDate;
+import util.DateUtils;
 import vehicle.Vehicles;
 
 public class Car extends Vehicles {
@@ -24,10 +24,12 @@ public class Car extends Vehicles {
         this.carType = carType;
     }
 
+    @Override
     public int getVehicleNumber() {
         return vehicleNumber;
     }
 
+    @Override
     public void setVehicleNumber(int vehicleNumber) {
         this.vehicleNumber = vehicleNumber;
     }
@@ -75,7 +77,7 @@ public class Car extends Vehicles {
     }
 
 
-    // Implement interface
+    @Override
     public int getPrice(final int hour, final int minute) {
         return getPrice(carType, hour, minute);
     }
@@ -95,11 +97,9 @@ public class Car extends Vehicles {
         return price;
     }
 
-
     private boolean isPositiveNumber(final int minutes) {
         return minutes > 0;
     }
-
 
     private int defaultCarPrice(final int hour, final int minute) {
         int price = 2000;   // 최초 30분 요금
@@ -114,6 +114,6 @@ public class Car extends Vehicles {
 
     @Override
     public String toString() {
-        return "승용차 " + vehicleNumber + " " + StringDate.strToDateFormat(entranceTime);
+        return "승용차 " + vehicleNumber + " " + DateUtils.getDateFormat(entranceTime);
     }
 }

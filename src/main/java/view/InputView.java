@@ -9,7 +9,7 @@ public class InputView {
 
     public static int inputMenu() {
         OutputView.initView(); // 얘는 이쪽에 있는게 좋을까.. main 함수에 바로 넣는게 좋을까..?
-        int menu = SCANNER.nextInt();
+        int menu = SCANNER.nextInt(); // Integer.parseInt(SCANNER.nextLine()); 로 처리하면 아래 nextLine() 필요 X
         SCANNER.nextLine(); // 개행처리를 위해 사용
         Validations.validInputMenu(menu);
         return menu;
