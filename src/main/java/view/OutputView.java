@@ -41,7 +41,7 @@ public class OutputView {
     }
 
     public static void printExitTime() {
-        System.out.println("출차시간을 입력하세요!");
+        System.out.println("출차시간을 입력하세요! (연,월,일,시,분)");
     }
 
     public static void printEmptyParking() {
@@ -84,5 +84,9 @@ public class OutputView {
 
     public static void printNotValidVehicleNumber() {
         System.out.println("***** 차량 번호를 잘못 입력하셨습니다. 4자리의 숫자를 다시 입력해주세요. *****");
+    }
+
+    public static void printNotValidEntranceTime() {
+        System.out.println("***** 입차 시간을 올바르게 입력해주세요. *****");
     }
 }

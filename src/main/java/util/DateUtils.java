@@ -11,10 +11,10 @@ import java.util.Locale;
  * 추후 리팩토링에서 시간+분 => 분 으로 수정...?
  */
 public class DateUtils {
-
     private static final String DATE_FORMAT = "yyyyMMddHHmm";
     private static final String NEW_DATE_FORMAT = "yyyy/MM/dd HH:mm";
 
+    // 네이밍 ...
     public static String getDateFormat(final String time) {
         String newTime = "";
         try {
@@ -28,6 +28,12 @@ public class DateUtils {
         return newTime;
     }
 
+    /**
+     * 시간 차이
+     * @param entranceTime - 입차 시간
+     * @param exitTime - 출차 시간
+     * @return
+     */
     public static int getDiffHours(final String entranceTime, final String exitTime) {
         SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT, Locale.KOREA);
         int diffHours = 0;
@@ -42,6 +48,12 @@ public class DateUtils {
         return diffHours;
     }
 
+    /**
+     * 분 차이
+     * @param entranceTime - 입차 시간
+     * @param exitTime - 출차 시간
+     * @return
+     */
     public static int getDiffMinutes(final String entranceTime, final String exitTime) {
         SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT, Locale.KOREA);
         int diffMinutes = 0;
@@ -54,17 +66,6 @@ public class DateUtils {
             e.printStackTrace();
         }
         return diffMinutes % 60;
-    }
-
-    public static void main(String[] args) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT, Locale.KOREA);
-        Date d1 = sdf.parse("202011251200");
-        Date d2 = sdf.parse("202011251330");
-
-        int diffHour = (int) ((d2.getTime() - d1.getTime()) / 3600000);
-        int diffMinute = (int) ((d2.getTime() - d1.getTime()) / 60000);
-        System.out.println(diffHour);
-        System.out.println(diffMinute);
     }
 
 }

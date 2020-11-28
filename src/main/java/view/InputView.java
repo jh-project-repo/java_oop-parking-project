@@ -34,7 +34,7 @@ public class InputView {
     }
 
     /**
-     * 차량 번호를 4자리 입력할 때 까지 무한반복을 통해 입력->유효성 검사를 하는데...
+     * 차량 번호를 4자리 입력할 때 까지 무한반복을 통해 입력 -> 유효성 검사를 하는데...
      * 괜찮은건가...?
      * @return
      */
@@ -50,9 +50,17 @@ public class InputView {
         }
     }
 
+    // 입차시간, 출차시간 유효성 검사에 로직이 중복인데... 어떻께 빼낼 수 있을까..?
     public static String inputEntranceTime() {
-        OutputView.printEntranceTime();
-        return SCANNER.nextLine();
+        while (true) {
+            OutputView.printEntranceTime();
+            String date = SCANNER.nextLine();
+            if (!Validations.vaildInputEntranceTime(date, "yyyyMMddHHmm")) {
+                OutputView.printNotValidEntranceTime();
+                continue;
+            }
+            return date;
+        }
     }
 
     public static int inputExitCarNumber() {
@@ -61,8 +69,15 @@ public class InputView {
     }
 
     public static String inputExitTime() {
-        OutputView.printExitTime();
-        return SCANNER.nextLine();
+        while (true) {
+            OutputView.printExitTime();
+            String date = SCANNER.nextLine();
+            if (!Validations.vaildInputEntranceTime(date, "yyyyMMddHHmm")) {
+                OutputView.printNotValidEntranceTime();
+                continue;
+            }
+            return date;
+        }
     }
 
 }
