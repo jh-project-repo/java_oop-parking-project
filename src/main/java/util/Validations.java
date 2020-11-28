@@ -57,7 +57,7 @@ public class Validations {
 
     
     /**
-     * 입차 시간(문자열)의 날짜 유효성 검사 ex) 202011281200 ==> 12자리, 달력 유효성 검사
+     * 입차 시간(문자열)의 날짜 유효성 검사 ex) 202011281200 ==> 12자리, 날짜 유효성 검사
      * @param date   - 입차 시간
      * @param format - 날짜 Format 형식
      * @return

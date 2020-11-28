@@ -26,7 +26,6 @@ public class BusPrice {
 //            default:
 //                throw new IllegalStateException(busType + "에 해당하는 버스 종류가 없습니다.");
 //        }
-
     }
 
     private static int getPrice(final int hour, final int minute, final int defaultPrice, final int halfHourlyPrice) {
@@ -36,10 +35,8 @@ public class BusPrice {
         if (isPositiveNumber(allMinutes)) {
             price += ((allMinutes - 1) / 30 + 1) * halfHourlyPrice;
         }
-
         return price;
     }
-
 
     private static boolean isPositiveNumber(final int minutes) {
         return minutes > 0;
