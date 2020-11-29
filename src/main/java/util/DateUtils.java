@@ -13,6 +13,8 @@ import java.util.Locale;
 public class DateUtils {
     private static final String DATE_FORMAT = "yyyyMMddHHmm";
     private static final String NEW_DATE_FORMAT = "yyyy/MM/dd HH:mm";
+    private static final int SECOND_PER_HOUR = 3600000;
+    private static final int SECOND_PER_MINUTE = 60000;
 
     // 네이밍 ...
     public static String getDateFormat(final String time) {
@@ -41,7 +43,7 @@ public class DateUtils {
             Date entranceDate = sdf.parse(entranceTime);
             Date exitDate = sdf.parse(exitTime);
 
-            diffHours = (int)((exitDate.getTime() - entranceDate.getTime()) / 3600000);
+            diffHours = (int)((exitDate.getTime() - entranceDate.getTime()) / SECOND_PER_HOUR);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -61,7 +63,7 @@ public class DateUtils {
             Date entranceDate = sdf.parse(entranceTime);
             Date exitDate = sdf.parse(exitTime);
 
-            diffMinutes = (int)((exitDate.getTime() - entranceDate.getTime()) / 60000);
+            diffMinutes = (int)((exitDate.getTime() - entranceDate.getTime()) / SECOND_PER_MINUTE);
         } catch (ParseException e) {
             e.printStackTrace();
         }
