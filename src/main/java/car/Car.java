@@ -50,20 +50,6 @@ public class Car extends Vehicles {
         this.vehicleNumber = vehicleNumber;
         this.entranceTime = entranceTime;
     }
-//
-//    public Car(CarType carType, int vehicleCapacity, int vehicleNumber, int entranceTime) {
-//        this.carType = getCarType(vehicleCapacity);
-//        this.vehicleCapacity = vehicleCapacity;
-//        this.vehicleNumber = vehicleNumber;
-//        this.entranceTime = entranceTime;
-//    }
-//
-//    private CarType getCarType(int vehicleCapacity) {
-//        if (isPositiveCapacity(vehicleCapacity)) {
-//            return CarType.ELECTRIC_CAR;
-//        }
-//        return CarType.GENERAL_CAR;
-//    }
 
     public static Car getCar(final int carCapacity, final int vehicleNumber, final String entranceTime) {
         if (isPositiveCapacity(carCapacity)) {
