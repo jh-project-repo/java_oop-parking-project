@@ -1,5 +1,6 @@
 package parking;
 
+import util.Const;
 import vehicle.Vehicles;
 
 import java.util.ArrayList;
@@ -8,23 +9,23 @@ import java.util.List;
 @SuppressWarnings("JavaDoc")
 public class Parking {
 
-    private int vehicleCount;
-    private List<Vehicles> vehicles;
-
-    public int getVehicleCount() {
-        return vehicleCount;
-    }
+    private final List<Vehicles> vehicles;
 
     public List<Vehicles> getVehicles() {
         return vehicles;
     }
 
     public Parking() {
+        vehicles = new ArrayList<>(Const.PARKING_COUNT);
     }
 
-    public Parking(int vehicleCount) {
-        this.vehicleCount = vehicleCount;
-        vehicles = new ArrayList<Vehicles>(vehicleCount);
+
+    /**
+     * Returns the number of elements in this list.
+     * @return
+     */
+    public int size() {
+        return vehicles.size();
     }
 
 
@@ -101,13 +102,17 @@ public class Parking {
         return false;
     }
 
+
     /**
-     * 주차장의 차량 공간과 입차한 차량 공간이 같을경우 true
-     * @param parkingCount - 입차한 차량 대수
+     * As-Is) 주차장의 차량 공간과 입차한 차량 공간이 같을경우 true
+     * To-Be) 주차장이 자리가 없는지 여부 판단
+     *  ==> 코드 리뷰부분, 주차장의 공간이 없는지는 단지 공간이 가득 찼는지만 파악하면 됨.
+     *  ==> 딱히 입차한 차량 공간과 판단할 필요가 없음.
+     *  ==> 클라이언트 입장에서는 주차장 공간이 있는지 없는지만 필요함.
      * @return
      */
-    public boolean isFullParking(final int parkingCount) {
-        return vehicleCount == parkingCount;
+    public boolean isFull() {
+        return size() == Const.PARKING_COUNT;  // 코드리뷰 부분
     }
 
 }
