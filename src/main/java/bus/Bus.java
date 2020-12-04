@@ -7,14 +7,6 @@ public class Bus extends Vehicles {
 
     private BusType busType;
 
-    public BusType getBusType() {
-        return busType;
-    }
-
-    public void setBusType(BusType busType) {
-        this.busType = busType;
-    }
-
     @Override
     public int getVehicleNumber() {
         return vehicleNumber;

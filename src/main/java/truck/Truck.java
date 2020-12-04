@@ -7,14 +7,6 @@ public class Truck extends Vehicles {
 
     private TruckType truckType;
 
-    public TruckType getTruckType() {
-        return truckType;
-    }
-
-    public void setTruckType(TruckType truckType) {
-        this.truckType = truckType;
-    }
-
     @Override
     public int getVehicleNumber() {
         return vehicleNumber;
