@@ -1,5 +1,6 @@
 package view;
 
+import util.Const;
 import vehicle.Vehicles;
 
 import java.util.List;
@@ -64,8 +65,8 @@ public class OutputView {
         System.out.println("총 수입은: " + price + "원 입니다.");
     }
 
-    public static void printParkingCountStatus(final int parkingCount, final int vehicleCount) {
-        System.out.println("현재 주차장의 잔여 좌석: (" + parkingCount + " / " + vehicleCount + ")");
+    public static void printParkingCountStatus(final int parkingCount) {
+        System.out.println("현재 주차장의 잔여 좌석: (" + parkingCount + " / " + Const.PARKING_COUNT + ")");
     }
 
     public static void printFullParking(final int vehicleCount) {

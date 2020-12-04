@@ -3,26 +3,27 @@ import car.Car;
 import parking.Parking;
 import truck.Truck;
 import util.DateUtils;
+import util.Menu;
 import vehicle.Vehicles;
 import view.InputView;
 import view.OutputView;
 
 public class Main {
-    private static final int PARKING_COUNT = 10;
 
     public static void main(String[] args) {
-        Parking parking = new Parking(PARKING_COUNT);
+        Parking parking = new Parking();
+
         int allIncome = 0;
         int parkingCount = 0;
 
         while (true) {
             OutputView.print();
-            OutputView.printParkingCountStatus(parkingCount, parking.getVehicleCount());
+            OutputView.printParkingCountStatus(parkingCount);
             OutputView.print();
             int menu = InputView.inputMenu();
 
-            if (menu == 1) { // 입차
-                if (parking.isFullParking(parkingCount)) {
+            if (menu == Menu.INPUT_CAR) { // 입차
+                if (parking.isFull()) {
                     OutputView.printFullParking(parkingCount);
                     continue;
                 }
@@ -46,7 +47,7 @@ public class Main {
                 }
                 parkingCount ++;
 
-            } else if (menu == 2) { // 출차
+            } else if (menu == Menu.EXIT_CAR) { // 출차
                 if (parking.isEmpty()) {
                     OutputView.printEmptyParking();
                     continue;
@@ -74,16 +75,17 @@ public class Main {
                     OutputView.printExitVehicle(vehicleNumber);
                 }
 
-            } else if (menu == 3) { // 주차 차량 보기
+            } else if (menu == Menu.PRINT_PARKING_CAR) {
                 if (parking.isEmpty()) {
                     OutputView.printEmptyParking();
                     continue;
                 }
                 OutputView.printParkingList(parking.getVehicles());
 
-            } else if (menu == 4) {
+            } else if (menu == Menu.PRINT_ALL_INCOME) {
                 OutputView.printAllIncome(allIncome);
-            } else if (menu == 5) {
+
+            } else if (menu == Menu.EXIT) {
                 break;
             }
         }
