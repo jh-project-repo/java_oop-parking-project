@@ -1,4 +1,13 @@
-## Java 주차장 관리 프로그램
+## Java 주차장 관리 프로그램 :blush:
+
+### 프로젝트 목표 ? :bulb:
+  - **객체지향** 설계 및 구현 연습
+  - **Enum**의 사용
+  - **다형성** 활용
+  - **JUnit**을 통한 단위 테스트 & 테스트 코드 작성
+  - **코드리뷰** 스터디를 통한 피드백 & 코드 개선
+
+<br><br>
 
 ### 승용차, 버스, 트럭 3종류가 있음.
 
@@ -37,3 +46,7 @@
     - 1분에 충전할 수 있는 용량은 0.2kWh 임
   - 전기차는 완충될 때 까지 충전한다고 가정함
   
+### 입출력 방식
+<img width="281" alt="출력 캡쳐1" src="https://user-images.githubusercontent.com/50076031/101240273-9ce34f80-3731-11eb-999e-a760edc88730.PNG">
+<img width="261" alt="출력 캡쳐2" src="https://user-images.githubusercontent.com/50076031/101240274-9e147c80-3731-11eb-8a97-896e011be3d5.PNG">
+<img width="237" alt="출력 캡쳐3" src="https://user-images.githubusercontent.com/50076031/101240275-9ead1300-3731-11eb-875d-ee2cf925bfe1.PNG">
