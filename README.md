@@ -51,3 +51,48 @@
 <img width="281" alt="출력 캡쳐1" src="https://user-images.githubusercontent.com/50076031/101240273-9ce34f80-3731-11eb-999e-a760edc88730.PNG">
 <img width="261" alt="출력 캡쳐2" src="https://user-images.githubusercontent.com/50076031/101240274-9e147c80-3731-11eb-8a97-896e011be3d5.PNG">
 <img width="237" alt="출력 캡쳐3" src="https://user-images.githubusercontent.com/50076031/101240275-9ead1300-3731-11eb-875d-ee2cf925bfe1.PNG">
+
+<br><br><br><br>
+
+### 코드리뷰
+  - Parking 클래스
+    - 주차장 객체를 생성할 때, 차량의 정보를 저장할 List의 크기를 선언한 채 생성하므로, 외부에서의 유입이 있어선 안됨.
+    ```java
+    public Parking() {
+        vehicles = new ArrayList<>(Const.PARKING_COUNT);
+    }
+    
+    if (parking.isFullParking(parkingCount)) { --> if (parking.isFull()) {
+    ```
+
+  - Main 클래스
+    - **menu** 를 입력받고 선택하는 부분은 상수로 정의해서 가독성을 증가시키는게 좋음
+    ```java
+    if (menu == 1) --> if (menu == Menu.INPUT_CAR)
+    ```
+    
+  - OutputView 클래스
+    - 출력행위를 위한 클래스로, 모든 메서드가 static 으로 선언되어 있는데 현 상태는 생성자를 만들어서 의도치않게 사용할 가능성이 있음
+      - 생성자를 private으로 설정하여 위 부분에대한 실수를 사전에 방지함
+    - 모든 print 관련된 메서드들을 한 클래스에 때려박다보니... 한 클래스가 너무 커짐(God Class)
+      - print 출력문도 관련성이 있는 부분으로 나누어서 OutputView 클래스를 추상화하고, 하위 클래스에서 상속받는 식으로 설계하는것도 좋을듯함
+      
+  - Bus, Truck 클래스
+    - 디폴트 생성자를 public으로 열어두었는데, 이부분은 제거하거나 private으로 막으면 더 좋을듯 함
+      - 기본 생성자로 객체가 생성되는걸 막고자 하기 위해서..
+    - 생성자를 오버로딩하는 것 보다 빌더패턴 등을 이용하여 강제성을 주는것도 좋을듯
+      - 생성자에 파라미터가 많아질수록, 혼돈할 염려가 있기 때문
+      
+  - BusPrice 클래스
+    - 아래와 같이 타입을 강제하는것이 좋을듯 함
+      - Bus가 아닌 다른 객체(Truck, Car) 클래스에서 잘못 사용할 염려가 있음
+      - Truck이 Bus 요금으로 정산해버리는 일이 발생할 수 있음
+    ```java
+    BusPrice<? extends Bus>
+    ```
+  - Enum Type
+    - Enum의 생성자에 Description을 주면 의미가 더욱 명확해질듯 함
+    ```java
+    LARGE_BUS(5000, 3000) -> LARGE_BUS(5000, 3000, "대형 버스")
+    ```
+    
