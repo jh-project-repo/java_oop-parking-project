@@ -8,8 +8,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SuppressWarnings("NonAsciiCharacters")
 public class DateUtilsTest {
 
-    @DisplayName("As-Is) yyyyMMddHHmm , To-Be) yyyy/MM/dd HH:mm")
     @Test
+    @DisplayName("As-Is) yyyyMMddHHmm , To-Be) yyyy/MM/dd HH:mm")
     public void 날짜_형식_테스트() {
 
         // Given

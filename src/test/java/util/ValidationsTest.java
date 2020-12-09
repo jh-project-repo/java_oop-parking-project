@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ValidationsTest {
 
-    @DisplayName("날짜 유효성 검사")
     @Test
+    @DisplayName("날짜 유효성 검사")
     public void 날짜_유효성_검사() {
 
         // Given

@@ -8,8 +8,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SuppressWarnings("NonAsciiCharacters")
 public class TruckTest {
 
-    @DisplayName("대형트럭 주차요금 테스트")
     @Test
+    @DisplayName("대형트럭 주차요금 테스트")
     public void 대형트럭_주차요금_테스트() {
 
         // Given

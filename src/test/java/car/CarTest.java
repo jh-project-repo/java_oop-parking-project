@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.*;
 
 public class CarTest {
 
-    @DisplayName("승용차 주차요금 테스트")
     @Test
+    @DisplayName("승용차 주차요금 테스트")
     void 승용차_주차요금_테스트() {
 
         // Given
