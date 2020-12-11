@@ -27,7 +27,7 @@ public class Bus extends Vehicles {
         this.entranceTime = entranceTime;
     }
 
-    public Bus() {}
+    private Bus() {}
 
     public Bus(BusType busType, int vehicleNumber, String entranceTime) {
         this.busType = busType;

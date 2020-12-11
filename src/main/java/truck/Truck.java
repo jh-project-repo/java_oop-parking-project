@@ -27,7 +27,7 @@ public class Truck extends Vehicles {
         this.entranceTime = entranceTime;
     }
 
-    public Truck() {
+    private Truck() {
     }
 
     public Truck(TruckType truckType, int vehicleNumber, String entranceTime) {
