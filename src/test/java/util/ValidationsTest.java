@@ -1,15 +1,13 @@
 package util;
 
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ValidationsTest {
 
     @Test
-    @DisplayName("날짜 유효성 검사")
-    public void 날짜_유효성_검사() {
+    void 날짜_유효성_검사() {
 
         // Given
         String dateFormat = "yyyyMMddHHmm";

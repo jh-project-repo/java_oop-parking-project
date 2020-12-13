@@ -1,14 +1,12 @@
 package car;
 
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
 
 import static org.assertj.core.api.Assertions.*;
 
 public class CarTest {
 
     @Test
-    @DisplayName("승용차 주차요금 테스트")
     void 승용차_주차요금_테스트() {
 
         // Given

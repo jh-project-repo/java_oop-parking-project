@@ -1,7 +1,6 @@
 package bus;
 
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -9,8 +8,7 @@ import static org.assertj.core.api.Assertions.*;
 public class BusTest {
 
     @Test
-    @DisplayName("대형버스 주차요금 테스트")
-    public void 대형버스_주차요금_테스트() {
+    void 대형버스_주차요금_테스트() {
 
         // Given
         BusType largeBus = BusType.LARGE_BUS;
@@ -24,9 +22,8 @@ public class BusTest {
         assertThat(largePrice2).isEqualTo(8000);
     }
 
-    @DisplayName("중형버스 주차요금 테스트")
     @Test
-    public void 중형버스_주차요금_테스트() {
+    void 중형버스_주차요금_테스트() {
 
         // Given
         BusType mediumBus = BusType.MEDIUM_BUS;
@@ -40,9 +37,8 @@ public class BusTest {
         assertThat(mediumPrice2).isEqualTo(5000);
     }
 
-    @DisplayName("소형버스 주차요금 테스트")
     @Test
-    public void 미니버스_주차요금_테스트() {
+    void 미니버스_주차요금_테스트() {
 
         // Given
         BusType miniBus = BusType.MINI_BUS;

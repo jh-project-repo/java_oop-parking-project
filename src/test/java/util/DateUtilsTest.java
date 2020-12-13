@@ -10,7 +10,7 @@ public class DateUtilsTest {
 
     @Test
     @DisplayName("As-Is) yyyyMMddHHmm , To-Be) yyyy/MM/dd HH:mm")
-    public void 날짜_형식_테스트() {
+    void 날짜_형식_테스트() {
 
         // Given
         String entracneTime = "202011242330";
@@ -22,9 +22,8 @@ public class DateUtilsTest {
         assertThat(newTime).isEqualTo("2020/11/24 23:30");
     }
 
-    @DisplayName("주차 시간 테스트")
     @Test
-    public void 주차_시간_테스트() {
+    void 주차_시간_테스트() {
 
         // Given
         String entranceTime1 = "202011251200";
@@ -42,9 +41,8 @@ public class DateUtilsTest {
         assertThat(diffHours2).isEqualTo(0);
     }
     
-    @DisplayName("주차 분 테스트")
     @Test
-    public void 주차_분_테스트() {
+    void 주차_분_테스트() {
 
         // Given
         String entranceTime = "202011251200";
