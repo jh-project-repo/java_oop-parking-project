@@ -5,7 +5,7 @@ import util.Validations;
 import java.util.Scanner;
 
 public class InputView {
-    private final static Scanner SCANNER = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static int inputMenu() {
         OutputView.initView(); // 얘는 이쪽에 있는게 좋을까.. main 함수에 바로 넣는게 좋을까..?
