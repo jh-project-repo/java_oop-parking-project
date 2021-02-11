@@ -46,9 +46,9 @@
   - 전기차는 완충될 때 까지 충전한다고 가정함
   
 ### 📃 입출력 방식
-<img width="281" alt="출력 캡쳐1" src="https://user-images.githubusercontent.com/50076031/101240273-9ce34f80-3731-11eb-999e-a760edc88730.PNG">
-<img width="261" alt="출력 캡쳐2" src="https://user-images.githubusercontent.com/50076031/101240274-9e147c80-3731-11eb-8a97-896e011be3d5.PNG">
-<img width="237" alt="출력 캡쳐3" src="https://user-images.githubusercontent.com/50076031/101240275-9ead1300-3731-11eb-875d-ee2cf925bfe1.PNG">
+<img width="280" alt="출력 캡쳐1" src="https://user-images.githubusercontent.com/50076031/101240273-9ce34f80-3731-11eb-999e-a760edc88730.PNG">
+<img width="280" alt="출력 캡쳐2" src="https://user-images.githubusercontent.com/50076031/101240274-9e147c80-3731-11eb-8a97-896e011be3d5.PNG">
+<img width="280" alt="출력 캡쳐3" src="https://user-images.githubusercontent.com/50076031/101240275-9ead1300-3731-11eb-875d-ee2cf925bfe1.PNG">
 
 <br><br><br><br>
 
@@ -70,8 +70,8 @@
     ```
     
   - OutputView 클래스
-    - 출력행위를 위한 클래스로, 모든 메서드가 static 으로 선언되어 있는데 현 상태는 생성자를 만들어서 의도치않게 사용할 가능성이 있음
-      - 생성자를 private으로 설정하여 위 부분에대한 실수를 사전에 방지함
+    - ~출력행위를 위한 클래스로, 모든 메서드가 static 으로 선언되어 있는데 현 상태는 생성자를 만들어서 의도치않게 사용할 가능성이 있음~
+      - ~생성자를 private으로 설정하여 위 부분에대한 실수를 사전에 방지함~
     - 모든 print 관련된 메서드들을 한 클래스에 때려박다보니... 한 클래스가 너무 커짐(God Class)
       - print 출력문도 관련성이 있는 부분으로 나누어서 OutputView 클래스를 추상화하고, 하위 클래스에서 상속받는 식으로 설계하는것도 좋을듯함
       
