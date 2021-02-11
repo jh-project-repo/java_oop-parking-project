@@ -3,6 +3,8 @@ package car;
 import util.DateUtils;
 import vehicle.Vehicles;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 public class Car extends Vehicles {
 
     private CarType carType;
@@ -16,30 +18,13 @@ public class Car extends Vehicles {
         return vehicleCapacity;
     }
 
-    public void setVehicleCapacity(int vehicleCapacity) {
-        this.vehicleCapacity = vehicleCapacity;
-    }
-
-    public void setCarType(CarType carType) {
-        this.carType = carType;
-    }
-
     @Override
     public int getVehicleNumber() {
         return vehicleNumber;
     }
 
-    @Override
-    public void setVehicleNumber(int vehicleNumber) {
-        this.vehicleNumber = vehicleNumber;
-    }
-
     public String getEntranceTime() {
         return entranceTime;
-    }
-
-    public void setEntranceTime(String entranceTime) {
-        this.entranceTime = entranceTime;
     }
 
     public Car() {
@@ -51,7 +36,7 @@ public class Car extends Vehicles {
         this.entranceTime = entranceTime;
     }
 
-    public static Car getCar(final int carCapacity, final int vehicleNumber, final String entranceTime) {
+    public static Car of(final int carCapacity, final int vehicleNumber, final String entranceTime) {
         if (isPositiveCapacity(carCapacity)) {
             return new ElectricCar(vehicleNumber, entranceTime, carCapacity);
         }

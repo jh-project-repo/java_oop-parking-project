@@ -12,11 +12,12 @@ public abstract class Vehicles {
 
     public abstract int getVehicleNumber();
 
-    public abstract void setVehicleNumber(int vehicleNumber);
+    // Setter는 다 없애자.. Entity
+    //public abstract void setVehicleNumber(int vehicleNumber);
 
     public abstract String getEntranceTime();
 
-    public abstract void setEntranceTime(String entranceTime);
+    //public abstract void setEntranceTime(String entranceTime);
 
     public abstract String toString();
 

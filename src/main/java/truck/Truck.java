@@ -3,6 +3,9 @@ package truck;
 import util.DateUtils;
 import vehicle.Vehicles;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 public class Truck extends Vehicles {
 
     private TruckType truckType;
@@ -13,30 +16,27 @@ public class Truck extends Vehicles {
     }
 
     @Override
-    public void setVehicleNumber(int vehicleNumber) {
-        this.vehicleNumber = vehicleNumber;
-    }
-
-    @Override
     public String getEntranceTime() {
         return entranceTime;
-    }
-
-    @Override
-    public void setEntranceTime(String entranceTime) {
-        this.entranceTime = entranceTime;
     }
 
     private Truck() {
     }
 
     public Truck(TruckType truckType, int vehicleNumber, String entranceTime) {
+        checkNotNull(truckType, "busType must not null");
+        checkArgument(vehicleNumber >= 0, "vehicleNumber must be greater than zero");
+        checkArgument(
+                entranceTime.length() == 12,
+                "entraceTime length must be 12 - yyyyMMddHHmm"
+        );
+
         this.truckType = truckType;
         this.vehicleNumber = vehicleNumber;
         this.entranceTime = entranceTime;
     }
 
-    public static Truck getTurck(final int vehicleCapacity, final int vehicleNumber, final String entranceTime) {
+    public static Truck of(final int vehicleCapacity, final int vehicleNumber, final String entranceTime) {
         return new Truck(getTruckType(vehicleCapacity), vehicleNumber, entranceTime);
     }
 

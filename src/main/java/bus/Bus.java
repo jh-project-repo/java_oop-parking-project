@@ -3,6 +3,9 @@ package bus;
 import util.DateUtils;
 import vehicle.Vehicles;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 public class Bus extends Vehicles {
 
     private BusType busType;
@@ -13,29 +16,26 @@ public class Bus extends Vehicles {
     }
 
     @Override
-    public void setVehicleNumber(int vehicleNumber) {
-        this.vehicleNumber = vehicleNumber;
-    }
-
-    @Override
     public String getEntranceTime() {
         return entranceTime;
-    }
-
-    @Override
-    public void setEntranceTime(String entranceTime) {
-        this.entranceTime = entranceTime;
     }
 
     private Bus() {}
 
     public Bus(BusType busType, int vehicleNumber, String entranceTime) {
+        checkNotNull(busType, "busType must not null");
+        checkArgument(vehicleNumber >= 0, "vehicleNumber must be greater than zero");
+        checkArgument(
+                entranceTime.length() == 12,
+                "entraceTime length must be 12 - yyyyMMddHHmm"
+                );
+
         this.busType = busType;
         this.vehicleNumber = vehicleNumber;
         this.entranceTime = entranceTime;
     }
 
-    public static Bus getBus(final int vehicleCapacity, final int vehicleNumber, final String entranceTime) {
+    public static Bus of(final int vehicleCapacity, final int vehicleNumber, final String entranceTime) {
         return new Bus(getBusType(vehicleCapacity), vehicleNumber, entranceTime);
     }
 
