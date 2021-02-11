@@ -11,6 +11,10 @@ import java.util.List;
  */
 public class OutputView {
 
+    // 모든 메서드가 static이므로, 생성자는 필요 없음..
+    private OutputView() {
+    }
+
     public static void initView(){
         System.out.println();
         System.out.println("원하는 기능을 선택하세요!");

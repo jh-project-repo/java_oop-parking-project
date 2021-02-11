@@ -5,7 +5,13 @@ import util.Validations;
 import java.util.Scanner;
 
 public class InputView {
+
     private static final Scanner SCANNER = new Scanner(System.in);
+
+    // 모든 메서드가 static이므로, 생성자는 필요 없음..
+    private InputView(){
+    }
+
 
     public static int inputMenu() {
         OutputView.initView(); // 얘는 이쪽에 있는게 좋을까.. main 함수에 바로 넣는게 좋을까..?
