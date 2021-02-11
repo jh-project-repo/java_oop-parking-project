@@ -36,13 +36,13 @@ public class Main {
                 String entranceTime = InputView.inputEntranceTime();
 
                 if ("c".equals(carType)) {
-                    Vehicles car = Car.getCar(vehicleCapacity, vehicleNumber, entranceTime);
+                    Vehicles car = Car.of(vehicleCapacity, vehicleNumber, entranceTime);
                     parking.add(car);
                 } else if ("t".equals(carType)) {
-                    Vehicles truck = Truck.getTurck(vehicleCapacity, vehicleNumber, entranceTime);
+                    Vehicles truck = Truck.of(vehicleCapacity, vehicleNumber, entranceTime);
                     parking.add(truck);
                 } else if ("b".equals(carType)) {
-                    Vehicles bus = Bus.getBus(vehicleCapacity, vehicleNumber, entranceTime);
+                    Vehicles bus = Bus.of(vehicleCapacity, vehicleNumber, entranceTime);
                     parking.add(bus);
                 }
                 parkingCount ++;
